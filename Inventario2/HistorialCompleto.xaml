@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.HistorialCompleto">
+    <StackLayout
+		Margin="50,20,50,20">
+        <StackLayout
+			Margin="0,0,0,50">
+            <Label
+				HorizontalOptions="Center"
+				Text="HISTORIAL" 
+				FontAttributes="Bold"
+				FontSize="Large"/>
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Horizontal">
+            <Label
+                Text="Desde:" 
+				FontAttributes="Bold"/>
+            <DatePicker
+		        x:Name="desde"
+                Format="dd/MM/yyyy"/>
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Horizontal"
+			Margin="0,0,0,20">
+            <Label
+                Text="Hasta:" 
+				FontAttributes="Bold"/>
+            <DatePicker
+		        x:Name="hasta"
+                Format="dd/MM/yyyy"/>
+        </StackLayout>
+
+        <Grid
+	        ColumnSpacing="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Text="Usuario:" 
+				FontAttributes="Bold"
+                Grid.Column="0"
+				Grid.Row="0"/>
+
+            <Label
+                Text="Producto" 
+				FontAttributes="Bold"
+                Grid.Column="1"
+				Grid.Row="0"/>
+
+            <Label
+                Text="Retiro o ingreso" 
+				FontAttributes="Bold"
+                Grid.Column="2"
+				Grid.Row="0"/>
+        </Grid>
+        <ScrollView
+			VerticalOptions="FillAndExpand"
+			HorizontalOptions="FillAndExpand"
+			Grid.ColumnSpan="3"
+			Grid.Row="1">
+            <StackLayout>
+                <BoxView
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Aquamarine"/>
+                <!-- Aqui pondre que se muestre las listas, ya usando el data binding -->
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

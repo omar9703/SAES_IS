@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.Ajustes">
+    <StackLayout
+		Margin="50,20,50,20">
+        <StackLayout
+			Margin="0,0,0,70">
+            <Label
+				HorizontalOptions="Center"
+				Text="AJUSTES" 
+				FontAttributes="Bold"
+				FontSize="Large"/>
+        </StackLayout>
+
+        <StackLayout>
+
+            <Grid
+                ColumnSpacing="30">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+		            Text="Copia de Seguridad" 
+                    FontAttributes="Bold"
+                    Grid.Column="0"
+                    Grid.Row="0"/>
+
+                <Switch
+			        IsToggled="True"
+				    Toggled="Copia"
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+
+                <Label
+				    Text="Sincronizacion Automatica" 
+                    FontAttributes="Bold"
+                    Grid.Column="0"
+                    Grid.Row="1"/>
+
+                <Switch
+			        IsToggled="True"
+				    Toggled="Sincronizacion"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+
+                <Button
+		            HorizontalOptions="Start"
+                    Text="Informacion" 
+			        FontAttributes="Bold"
+			        BorderWidth="1"
+			        BackgroundColor="White"
+			        BorderColor="Red"
+                    Clicked="Informacion"
+                    Grid.Row="2"
+					Grid.ColumnSpan="2"/>
+
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

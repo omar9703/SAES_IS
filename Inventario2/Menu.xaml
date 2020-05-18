@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.Menu">
+
+    <Grid
+        ColumnSpacing="20"
+        RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label
+			HorizontalOptions="Center"
+			Text="MENU" 
+			FontAttributes="Bold"
+			FontSize="Large"
+			Margin="50,20,50,10"
+			Grid.ColumnSpan="2"/>
+
+        <Button
+			Margin="50,0,0,0"
+			Grid.Row="1"
+			Text="Mi Perfil"
+			Clicked="Ir_Perfil"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"/>
+
+        <Button
+			Margin="0,0,50,0"
+			Text="Inventario"
+			Clicked="Ir_Inventario"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"
+			Grid.Column="1"
+			Grid.Row="1"/>
+
+        <Button
+			Margin="50,0,0,0"
+			Text="Historial"
+			Clicked="Ir_Historial"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"
+			Grid.Row="2"/>
+
+        <Button
+			Margin="0,0,50,0"
+			Text="Empleados"
+			Clicked="Ir_Empleados"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"
+			Grid.Row="2"
+			Grid.Column="1"/>
+
+        <Button
+			Margin="50,0,0,20"
+            Text="Levantar Reporte"
+			Clicked="Ir_Reporte"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"
+            Grid.Row="3"/>
+
+        <Button
+			Margin="0,0,50,20"
+            Text="Ajustes"
+			Clicked="Ir_Ajustes"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"
+            Grid.Column="1"
+            Grid.Row="3"/>
+
+    </Grid>
+
+</ContentPage>

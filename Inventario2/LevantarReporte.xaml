@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.LevantarReporte">
+    <StackLayout
+		Margin="50,20,50,20">
+        <StackLayout
+			Margin="0,0,0,50">
+            <Label
+				HorizontalOptions="Center"
+				Text="LEVANTAR REPORTE" 
+				FontAttributes="Bold"
+				FontSize="Large"/>
+        </StackLayout>
+
+        <ScrollView>
+            <StackLayout>
+                <StackLayout 
+			Orientation="Horizontal">
+
+                    <Label
+				Text="Producto:"
+				FontAttributes="Bold"/>
+
+                    <Entry
+				HorizontalOptions="FillAndExpand"
+				Placeholder="Nombre o ID del Producto"
+				FontAttributes= "Italic"/>
+
+                </StackLayout>
+
+                <Button
+			HorizontalOptions="Center"
+			Text="Escanear"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"
+			Clicked="Scan"/>
+
+                <Label
+			Text="Descripcion:" 
+			FontAttributes="Bold"/>
+
+                <Editor 
+			HeightRequest ="200"
+			Placeholder="Indicar observaciones del producto." />
+
+                <Button
+			Text="Agregar fotos de estado"
+			Clicked="ScanFotos"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="Center"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red" 
+			HeightRequest="150"/>
+
+                <StackLayout
+			HorizontalOptions="End">
+                    <Button
+				Text="Enviar"
+				Clicked="Enviar_Reporte"
+				HorizontalOptions="End"
+				FontAttributes="Bold"
+				BorderWidth="1"
+				BackgroundColor="White"
+				BorderColor="Red"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

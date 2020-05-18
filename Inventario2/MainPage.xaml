@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.MainPage">
+
+    <StackLayout
+		Margin="50,20,50,20">
+        <StackLayout
+            Margin="0,0,0,150">
+            <Label
+			    HorizontalOptions="Center"
+			    Text="INICIAR SESION" 
+			    FontAttributes="Bold"
+			    FontSize="Large"/>
+        </StackLayout>
+
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Usuario:"
+				FontAttributes="Bold"/>
+            <Entry
+				HorizontalOptions="FillAndExpand"
+				Placeholder="Nombre o ID"
+				FontAttributes= "Italic"/>
+        </StackLayout>
+
+        <StackLayout 
+			Orientation="Horizontal"
+			Margin="0,0,0,20">
+            <Label
+				Text="Contraseña:"
+				FontAttributes="Bold"/>
+            <Entry
+				HorizontalOptions="FillAndExpand"
+				Placeholder="Contraseña"
+				FontAttributes= "Italic"
+				IsPassword= "True" />
+        </StackLayout>
+
+        <StackLayout
+			HorizontalOptions="End">
+            <Button
+				Text="Ingresar"
+				Clicked="IniciarSesion"
+				HorizontalOptions="End"
+				FontAttributes="Bold"
+				BorderWidth="1"
+				BackgroundColor="White"
+				BorderColor="Red"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

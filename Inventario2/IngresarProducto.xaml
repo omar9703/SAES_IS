@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.IngresarProducto">
+    <StackLayout
+		Margin="50,20,50,20">
+        <StackLayout
+			Margin="0,0,0,50">
+            <Label
+				HorizontalOptions="Center"
+				Text="INGRESAR PRODUCTO" 
+				FontAttributes="Bold"
+				FontSize="Large"/>
+        </StackLayout>
+
+        <ScrollView>
+            <StackLayout>
+                <Button
+			    HorizontalOptions="Center"
+			    Text="Escanear"
+			    FontAttributes="Bold"
+			    BorderWidth="1"
+			    BackgroundColor="White"
+			    BorderColor="Red"
+			    Clicked="Scan"/>
+
+                <Button
+			    Text="Agregar fotos de estado"
+			    Clicked="ScanFotos"
+			    HorizontalOptions="FillAndExpand"
+			    VerticalOptions="Center"
+			    FontAttributes="Bold"
+			    BorderWidth="1"
+			    BackgroundColor="White"
+			    BorderColor="Red" 
+			    HeightRequest="150"/>
+
+                <Label
+               Text="Observaciones" 
+			    FontAttributes="Bold"/>
+                <Editor 
+		        HeightRequest ="200"
+		        Placeholder="Indicar observaciones del producto." />
+
+                <StackLayout 
+			    Orientation="Horizontal">
+                    <Label
+				    Text="Reitera tu contraseña:"
+				    FontAttributes="Bold"/>
+                    <Entry
+				    VerticalOptions="FillAndExpand" 
+				    FontAttributes="Italic"
+				    Placeholder="Contraseña"
+				    IsPassword= "True" />
+                </StackLayout>
+
+                <Button
+			    Text="OK"
+			    Clicked="IngresaP"
+			    HorizontalOptions="End"
+			    FontAttributes="Bold"
+			    BorderWidth="1"
+			    BackgroundColor="White"
+			    BorderColor="Red"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

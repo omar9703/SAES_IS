@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.AgregarEmpleado">
+    <StackLayout
+		BackgroundColor="Bisque">
+        <Label
+                Margin="50,20,50,150"
+				HorizontalOptions="Center"
+				Text="AGREGAR EMPLEADO" 
+				FontAttributes="Bold"
+				FontSize="Large"/>
+        
+        <StackLayout 
+			Orientation="Horizontal"
+            Margin="50,0,50,0">
+            <Label
+				Text="Nombre del Empleado:"
+				FontAttributes="Bold"/>
+            <Entry
+				HorizontalOptions="FillAndExpand" 
+				FontAttributes="Italic"
+				Placeholder="Nombre del Empleado" 
+				Completed="GenerateID"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Label
+			Text="ID del Empleado:"
+			FontAttributes="Bold"/>
+            <Label
+			 x:Name="idEmp"/>
+        </StackLayout>
+
+        <StackLayout 
+			Orientation="Horizontal"
+			Margin="0,0,0,70">
+            <Label
+				Text="Reitera tu contraseña:"
+				FontAttributes="Bold"/>
+            <Entry
+				VerticalOptions="FillAndExpand" 
+				FontAttributes="Italic"
+				Placeholder="Contraseña"
+				IsPassword= "True" />
+        </StackLayout>
+
+        <Button
+			Text="OK"
+			Clicked="AgregaEmp"
+			HorizontalOptions="End"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"/>
+
+    </StackLayout>
+</ContentPage>

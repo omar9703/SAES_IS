@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.DetallesProducto">
+    <StackLayout
+		Margin="50,20,50,20">
+        <StackLayout
+            Margin="0,0,0,50">
+            <Label
+			    HorizontalOptions="Center"
+			    Text="DETALLES DEL PRODUCTO" 
+			    FontAttributes="Bold"
+			    FontSize="Large"/>
+        </StackLayout>
+        <ScrollView
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <StackLayout>
+                    <StackLayout 
+						Orientation="Horizontal">
+                        <Label
+							Text="Nombre del Producto:"
+							FontAttributes="Bold"/>
+                        <Label
+							x:Name="nameProd"/>
+                    </StackLayout>
+                    <StackLayout
+						Orientation="Horizontal">
+                        <Label
+							Text="ID del Producto:"
+							FontAttributes="Bold"/>
+                        <Label
+							x:Name="idProd"/>
+                    </StackLayout>
+                    <Label
+						HorizontalOptions="Center"
+						Text="DETALLES DE INGRESO" 
+						FontAttributes="Bold"/>
+                    <StackLayout 
+						Orientation="Horizontal">
+                        <Label
+							Text="Fecha de Ingreso:"
+							FontAttributes="Bold"/>
+                        <Label
+							x:Name="fechaIng"/>
+                    </StackLayout>
+                    <StackLayout 
+						Orientation="Horizontal">
+                        <Label
+							Text="Empleado que lo ingreso:"
+							FontAttributes="Bold"/>
+                        <Label
+							x:Name="empIngr"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label
+					Text=" Fotos de Ingreso:"
+					FontAttributes="Bold"/>
+                <BoxView
+					x:Name="Fotos"
+					HeightRequest="150"
+					BackgroundColor="Aquamarine"/>
+                <!-- Voy a poner las fotos, esto solo lo puse para dejar el espacio y mandarlas a llamar bien -->
+                <StackLayout
+					Margin="0,10,0,0">
+                    <Label
+						HorizontalOptions="Center"
+						Text="DETALLES DE RETIRO" 
+						FontAttributes="Bold"/>
+                    <StackLayout 
+						Orientation="Horizontal">
+                        <Label
+							Text="Fecha de Retiro:"
+							FontAttributes="Bold"/>
+                        <Label
+							x:Name="fechaRet"/>
+                    </StackLayout>
+                    <StackLayout 
+						Orientation="Horizontal">
+                        <Label
+							Text="Empleado que lo retiro:"
+							FontAttributes="Bold"/>
+                        <Label
+							x:Name="empRet"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label
+					Text=" Fotos del Retiro:"
+					FontAttributes="Bold"/>
+                <BoxView
+					x:Name="FotosRet"
+					HeightRequest="150"
+					BackgroundColor="Aquamarine"/>
+                <!-- Igual que arriba -->
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventario2.DetallesEmpleado">
+    <StackLayout
+		Margin="50,20,50,20">
+        <StackLayout
+            Margin="0,0,0,150">
+            <Label
+				HorizontalOptions="Center"
+				Text="DETALLES DE EMPLEADO" 
+				FontAttributes="Bold"
+				FontSize="Large"/>
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Nombre del Empleado:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="nameEmp"/>
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="ID del Empleado:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="idEmpAsig"/>
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Fecha de contratacion:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="fechaCont"/>
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Ultimo movimiento:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="ultiMov"/>
+            <!-- Indicara el ultimo movimiento que hizo, ingreso o retiro un producto -->
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
