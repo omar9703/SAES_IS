@@ -29,7 +29,7 @@ namespace Inventario2
 
         private async void MenuOp(object sender, EventArgs e)
         { //Despegar menu de  3 opciones Ingresar, Retirar, Detalles
-            string res = await DisplayActionSheet("Opciones", "Cancelar", null, "Ingresar Producto", "Retirar Producto", "Detalles del Producto");
+            string res = await DisplayActionSheet("Opciones", "Cancelar", null, "Ingresar Alumno", "Retirar Alumno");
             switch (res)
             {
                 case "Ingresar Producto":
@@ -40,10 +40,7 @@ namespace Inventario2
                     //Abrir vista/pagina Retirar Producto
                     Navigation.PushAsync(new RetirarProducto());
                     break;
-                case "Detalles del Producto":
-                    //Abrir vista/pagina Detalles del Producto
-                    Navigation.PushAsync(new DetallesProducto());
-                    break;
+                
             }
         }
     }

@@ -10,7 +10,7 @@
         <Label
                 Margin="50,20,50,150"
 				HorizontalOptions="Center"
-				Text="AGREGAR EMPLEADO" 
+				Text="AGREGAR PERSONAL" 
 				FontAttributes="Bold"
 				FontSize="Large"/>
         

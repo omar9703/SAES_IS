@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,6 +7,7 @@ namespace Inventario2
 {
     public partial class App : Application
     {
+        public static MobileServiceClient client = new MobileServiceClient("https://saesescomis.azurewebsites.net");
         public App()
         {
             InitializeComponent();

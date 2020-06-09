@@ -11,7 +11,7 @@
 			Margin="0,0,0,50">
             <Label
 				HorizontalOptions="Center"
-				Text="INGRESAR PRODUCTO" 
+				Text="INGRESAR ALUMNO" 
 				FontAttributes="Bold"
 				FontSize="Large"/>
         </StackLayout>

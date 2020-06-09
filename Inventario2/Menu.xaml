@@ -41,7 +41,7 @@
 
         <Button
 			Margin="0,0,50,0"
-			Text="Inventario"
+			Text="Alumnado"
 			Clicked="Ir_Inventario"
 			FontAttributes="Bold"
 			BorderWidth="1"
@@ -52,7 +52,7 @@
 
         <Button
 			Margin="50,0,0,0"
-			Text="Historial"
+			Text="Materias"
 			Clicked="Ir_Historial"
 			FontAttributes="Bold"
 			BorderWidth="1"
@@ -62,7 +62,7 @@
 
         <Button
 			Margin="0,0,50,0"
-			Text="Empleados"
+			Text="Empleados y Profesores"
 			Clicked="Ir_Empleados"
 			FontAttributes="Bold"
 			BorderWidth="1"
@@ -73,7 +73,7 @@
 
         <Button
 			Margin="50,0,0,20"
-            Text="Levantar Reporte"
+            Text="ETS"
 			Clicked="Ir_Reporte"
 			FontAttributes="Bold"
 			BorderWidth="1"
