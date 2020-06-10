@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Inventario2.modelos;
+using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,28 +18,45 @@ namespace Inventario2
         {
             InitializeComponent();
         }
-        private void SearchBarEmp(object sender, EventArgs e)
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            try
+            {
+                var list = await App.client.GetTable<Usuario>().Where(u => (u.rol == "Administrativo" || u.rol == "Profesor")).ToListAsync();
+                
+                
+                postListView.ItemsSource = list;
+            }
+            catch (MobileServiceInvalidOperationException e)
+            {
+                await DisplayAlert("ERROR", e.ToString(), "aceptar");
+            }
+
+        }
+            private void SearchBarEmp(object sender, EventArgs e)
         {
             DisplayAlert("Buscando", "Buscando Resultados", "OK");
         }
 
         private async void MenuOpEmp(object sender, EventArgs e)
         { //Despegar menu de  3 opciones Agregar, Eliminar, Detalles
-            string res = await DisplayActionSheet("Opciones", "Cancelar", null, "Agregar Empleado", "Eliminar Empleado", "Detalles del Empleado");
+            string res = await DisplayActionSheet("Opciones", "Cancelar", null, "Agregar Profesor","Agregar Administrativo" ,"Eliminar Empleado");
             switch (res)
             {
-                case "Agregar Empleado":
+                case "Agregar Administrativo":
                     //Abrir vista/pagina Agregar Empleado
-                    Navigation.PushAsync(new AgregarEmpleado());
+                    await Navigation.PushAsync(new AgregarEmpleado());
+                    break;
+                case "Agregar Profesor":
+                    //Abrir vista/pagina Agregar Empleado
+                    await Navigation.PushAsync(new AgregarProfesor());
                     break;
                 case "Eliminar Empleado":
                     //Abrir vista/pagina Eliminar Empleado
-                    Navigation.PushAsync(new EliminarEmpleado());
+                    await Navigation.PushAsync(new EliminarEmpleado());
                     break;
-                case "Detalles del Empleado":
-                    //Abrir vista/pagina Detalles del Empleado
-                    Navigation.PushAsync(new DetallesEmpleado());
-                    break;
+                
             }
 
         }

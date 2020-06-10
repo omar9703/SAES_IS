@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventario2.modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,17 +16,14 @@ namespace Inventario2
         public HistorialCompleto()
         {
             InitializeComponent();
-            desde.Date = DateTime.Now;
-            desde.MinimumDate = new DateTime(2000, 1, 1);
-            desde.MaximumDate = desde.Date;
-            desde.DateSelected += desde_DateSelected;
-
-            hasta.Date = DateTime.Now;
-            hasta.MinimumDate = new DateTime(2000, 1, 1);
-            hasta.MaximumDate = hasta.Date;
-            hasta.DateSelected += hasta_DateSelected;
+           
+           
         }
-
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            postListView.ItemsSource = await App.client.GetTable<Materia>().ToListAsync();
+        }
         private void desde_DateSelected(object sender, DateChangedEventArgs e)
         {
 
@@ -34,6 +32,27 @@ namespace Inventario2
         private void hasta_DateSelected(object sender, DateChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private async void MenuOp(object sender, EventArgs e)
+        { //Despegar menu de  3 opciones Ingresar, Retirar, Detalles
+            string res = await DisplayActionSheet("Opciones", "Cancelar", null, "Ingresar Materia", "Retirar Materia");
+            switch (res)
+            {
+                case "Ingresar Materia":
+                    //Abrir vista/pagina Ingresar Producto
+                    await Navigation.PushAsync(new AgregarMateria());
+                    break;
+                case "Retirar Materia":
+                    //Abrir vista/pagina Retirar Producto
+                    await Navigation.PushAsync(new RetirarProducto());
+                    break;
+
+            }
         }
     }
 }

@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Inventario2.AgregarEmpleado">
+             x:Class="Inventario2.AgregarMateria">
     <StackLayout Margin="50,20,50,20"
 		>
         <Label              
 				HorizontalOptions="Center"
-				Text="AGREGAR ADMINISTRATIVO" 
+				Text="AGREGAR MATERIA" 
 				FontAttributes="Bold"
 				FontSize="Large"/>
 
@@ -22,41 +22,38 @@
                 <Entry Placeholder="NOMBRE"
                        x:Name="name"/>
                 <Label
-               Text="Edad:" 
+               Text="Grupo:" 
 			    FontAttributes="Bold"/>
-                <Entry Placeholder="Edad"
-                       x:Name="edad"/>
+                <Entry Placeholder="Grupo"
+                       x:Name="grupo"/>
+                <Picker x:Name="pickerLugar"
+                            Title="Selecciona el Profesor"
+                           
+                            
+                            SelectedIndexChanged="pickerLugar_SelectedIndexChanged">
+                    <!--<Picker.Items>
+                            <x:String>Usuario</x:String>
+                            <x:String>Administrador</x:String>
+                            <x:String>Almacen</x:String>
+                        </Picker.Items>-->
+                </Picker>
                 <Label
-               Text="Telefono:" 
+               Text="Horario:" 
 			    FontAttributes="Bold"/>
-                <Entry Placeholder="tel"
-                       x:Name="tel"/>
+                <Entry Placeholder="horario"
+                       x:Name="hor"/>
                 <Label
-               Text="Correo:" 
+               Text="Plan de Estudios:" 
 			    FontAttributes="Bold"/>
-                <Entry Placeholder="email"
-                       x:Name="correo"/>
-                <Label
-               Text="Boleta:" 
-			    FontAttributes="Bold"/>
-                <Entry Placeholder="Boleta:"
-                       x:Name="boleta"/>
-                <Label
-               Text="Direccion:" 
-			    FontAttributes="Bold"/>
-                <Entry Placeholder="direccion"
-                       x:Name="dir"/>
-                <Label
-               Text="Grado de Estudios:" 
-			    FontAttributes="Bold"/>
-                <Entry Placeholder="grado"
-                       x:Name="grado"/>
+                <Entry Placeholder="Plan:"
+                       x:Name="plan"/>
+                
 
 
 
                 <Button
 			Text="OK"
-			Clicked="AgregaEmp"
+			Clicked="Button_Clicked"
 			HorizontalOptions="End"
 			FontAttributes="Bold"
 			BorderWidth="1"
@@ -65,7 +62,7 @@
             </StackLayout>
         </ScrollView>
 
-       
+
 
     </StackLayout>
 </ContentPage>

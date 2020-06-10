@@ -5,11 +5,67 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Inventario2.AgregarProfesor">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout Margin="50,20,50,20"
+		>
+        <Label              
+				HorizontalOptions="Center"
+				Text="AGREGAR PROFESOR" 
+				FontAttributes="Bold"
+				FontSize="Large"/>
+
+        <ScrollView>
+            <StackLayout>
+
+                <Label
+               Text="Nombre Completo:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="NOMBRE"
+                       x:Name="name"/>
+                <Label
+               Text="Edad:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="Edad"
+                       x:Name="edad"/>
+                <Label
+               Text="Telefono:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="tel"
+                       x:Name="tel"/>
+                <Label
+               Text="Correo:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="email"
+                       x:Name="correo"/>
+                <Label
+               Text="Boleta:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="Boleta:"
+                       x:Name="boleta"/>
+                <Label
+               Text="Direccion:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="direccion"
+                       x:Name="dir"/>
+                <Label
+               Text="Grado de Estudios:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="grado"
+                       x:Name="grado"/>
+
+
+
+                <Button
+			Text="OK"
+			Clicked="Button_Clicked"
+			HorizontalOptions="End"
+			FontAttributes="Bold"
+			BorderWidth="1"
+			BackgroundColor="White"
+			BorderColor="Red"/>
+            </StackLayout>
+        </ScrollView>
+
+
+
+    </StackLayout>
 </ContentPage>

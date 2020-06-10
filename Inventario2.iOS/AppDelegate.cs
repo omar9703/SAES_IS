@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace Inventario2.iOS
@@ -23,6 +24,7 @@ namespace Inventario2.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            CurrentPlatform.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

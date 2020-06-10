@@ -18,44 +18,39 @@
 
         <ScrollView>
             <StackLayout>
-                <Button
-			    HorizontalOptions="Center"
-			    Text="Escanear"
-			    FontAttributes="Bold"
-			    BorderWidth="1"
-			    BackgroundColor="White"
-			    BorderColor="Red"
-			    Clicked="Scan"/>
-
-                <Button
-			    Text="Agregar fotos de estado"
-			    Clicked="ScanFotos"
-			    HorizontalOptions="FillAndExpand"
-			    VerticalOptions="Center"
-			    FontAttributes="Bold"
-			    BorderWidth="1"
-			    BackgroundColor="White"
-			    BorderColor="Red" 
-			    HeightRequest="150"/>
 
                 <Label
-               Text="Observaciones" 
+               Text="Nombre Completo:" 
 			    FontAttributes="Bold"/>
-                <Editor 
-		        HeightRequest ="200"
-		        Placeholder="Indicar observaciones del producto." />
+                <Entry Placeholder="NOMBRE"
+                       x:Name="name"/>
+                <Label
+               Text="Edad:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="Edad"
+                       x:Name="edad"/>
+                <Label
+               Text="Telefono:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="tel"
+                       x:Name="tel"/>
+                <Label
+               Text="Correo:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="email"
+                       x:Name="correo"/>
+                <Label
+               Text="Boleta:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="Boleta:"
+                       x:Name="boleta"/>
+                <Label
+               Text="Direccion:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="direccion"
+                       x:Name="dir"/>
 
-                <StackLayout 
-			    Orientation="Horizontal">
-                    <Label
-				    Text="Reitera tu contraseña:"
-				    FontAttributes="Bold"/>
-                    <Entry
-				    VerticalOptions="FillAndExpand" 
-				    FontAttributes="Italic"
-				    Placeholder="Contraseña"
-				    IsPassword= "True" />
-                </StackLayout>
+               
 
                 <Button
 			    Text="OK"

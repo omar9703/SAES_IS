@@ -31,7 +31,7 @@ namespace Inventario2
         { //Hacer validacion y si es administrador o de bodega accede al historial completo, si es usuario accede a su historial propio
           //tipo=
           //if (tipo==usuario)
-            Navigation.PushAsync(new HistorialUsuario());
+            
             Navigation.PushAsync(new HistorialCompleto());
         }
 

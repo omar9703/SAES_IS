@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Inventario2.modelos;
+using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +25,33 @@ namespace Inventario2
             //idEmp.Text= idEmpleado.ToString();
         }
 
-        private void AgregaEmp(object sender, EventArgs e)
+        private async void AgregaEmp(object sender, EventArgs e)
         {
-
+            try
+            {
+                Usuario u = new Usuario()
+                {
+                    id = Guid.NewGuid().ToString(),
+                    nombre = name.Text,
+                    edad = edad.Text,
+                    telefono = tel.Text,
+                    estudios = grado.Text,
+                    correo = correo.Text,
+                    boleta = boleta.Text,
+                    contrasena = boleta.Text,
+                    direccion = dir.Text,
+                    rol = "Administrativo"
+                };
+                await App.client.GetTable<Usuario>().InsertAsync(u);
+                await DisplayAlert("Listo", "Personal Agregado Correctamente", "Aceptar");
+                await Navigation.PopAsync();
+            }
+            catch (MobileServiceInvalidOperationException t)
+            {
+                await DisplayAlert("ERROR", t.ToString(), "aceptar");
+            }
         }
+    
 
     }
 }

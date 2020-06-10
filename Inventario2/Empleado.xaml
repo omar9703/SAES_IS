@@ -25,11 +25,30 @@
 			VerticalOptions="FillAndExpand"
 			HorizontalOptions="FillAndExpand">
             <StackLayout>
-                <BoxView
-                    HorizontalOptions="FillAndExpand"
-            		VerticalOptions="FillAndExpand"
-                    BackgroundColor="Aquamarine"/>
-                <!-- Aqui pondre que se muestre las listas, ya usando el data binding -->
+                <ListView x:Name="postListView" BackgroundColor="Gray" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="210"/>
+                                            <ColumnDefinition Width="210"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                                            Text="{Binding nombre}" 
+                                                            TextColor="White" 
+                                                            Grid.Column="0"/>
+                                        <Label 
+                                                            Text="{Binding boleta}" 
+                                                            TextColor="White"  
+                                                            Grid.Column="1"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </ScrollView>
 

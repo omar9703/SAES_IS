@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 namespace Inventario2.UWP
 {
     public sealed partial class MainPage
@@ -20,6 +21,7 @@ namespace Inventario2.UWP
         public MainPage()
         {
             this.InitializeComponent();
+            
 
             LoadApplication(new Inventario2.App());
         }

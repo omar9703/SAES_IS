@@ -7,7 +7,7 @@ namespace Inventario2
 {
     public partial class App : Application
     {
-        public static MobileServiceClient client = new MobileServiceClient("https://saesescomis.azurewebsites.net");
+        public static MobileServiceClient client = new MobileServiceClient("https://escomis.azurewebsites.net");
         public App()
         {
             InitializeComponent();
