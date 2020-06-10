@@ -41,7 +41,8 @@ namespace Inventario2
                     grupo = grupo.Text,
                     horario = hor.Text,
                     planestudios = plan.Text,
-                    profesor = pickerLugar.SelectedItem.ToString()
+                    profesor = pickerLugar.SelectedItem.ToString(),
+                    semestre = sem.Text
                     
                     
                 };

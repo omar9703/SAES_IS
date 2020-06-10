@@ -47,6 +47,11 @@
 			    FontAttributes="Bold"/>
                 <Entry Placeholder="Plan:"
                        x:Name="plan"/>
+                <Label
+               Text="Semestre:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="Semestre:"
+                       x:Name="sem"/>
                 
 
 
