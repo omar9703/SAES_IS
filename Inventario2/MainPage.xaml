@@ -30,7 +30,8 @@
             <Entry
 				HorizontalOptions="FillAndExpand"
 				Placeholder="Nombre o ID"
-				FontAttributes= "Italic"/>
+				FontAttributes= "Italic"
+                x:Name="bol"/>
         </StackLayout>
 
         <StackLayout 
@@ -43,7 +44,8 @@
 				HorizontalOptions="FillAndExpand"
 				Placeholder="Contraseña"
 				FontAttributes= "Italic"
-				IsPassword= "True" />
+				IsPassword= "True" 
+                x:Name="contra"/>
         </StackLayout>
 
         <StackLayout

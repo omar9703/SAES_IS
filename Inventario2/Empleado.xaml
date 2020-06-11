@@ -17,23 +17,26 @@
         </StackLayout>
 
         <SearchBar
-            Placeholder="Buscar por nombre o ID"
-            CancelButtonColor="Red"
-            SearchButtonPressed="SearchBarEmp" />
-
+            x:Name="busqueda"
+			Placeholder="Buscar por nombre o nivel"
+			CancelButtonColor="Red"
+            SearchButtonPressed="busqueda_SearchButtonPressed"
+			 />
+        <ScrollView Orientation="Horizontal">
         <ScrollView
 			VerticalOptions="FillAndExpand"
 			HorizontalOptions="FillAndExpand">
             <StackLayout>
-                <ListView x:Name="postListView" BackgroundColor="Gray" >
+                    <ListView x:Name="postListView" BackgroundColor="Gray" ItemSelected="postListView_ItemSelected" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="210"/>
-                                            <ColumnDefinition Width="210"/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition Width="140"/>
                                         </Grid.ColumnDefinitions>
                                         <Label 
                                                             Text="{Binding nombre}" 
@@ -43,6 +46,7 @@
                                                             Text="{Binding boleta}" 
                                                             TextColor="White"  
                                                             Grid.Column="1"/>
+                                        <Button x:Name="botones" Text="ELIMINAR" BackgroundColor="Transparent" TextColor="Red" Clicked="botones_Clicked"  Grid.Column="2" />
                                     </Grid>
                                 </StackLayout>
                             </ViewCell>
@@ -51,7 +55,7 @@
                 </ListView>
             </StackLayout>
         </ScrollView>
-
+        </ScrollView>
         <Button
             HorizontalOptions="Start"
             Text="Opciones"

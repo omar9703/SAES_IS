@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Inventario2.modelos
 {
-    class Usuario
+    public class Usuario
     {
         public string id { get; set; }
         public string nombre { get; set; }

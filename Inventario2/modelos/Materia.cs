@@ -12,6 +12,8 @@ namespace Inventario2.modelos
         public string horario { get; set; }
         public string profesor { get; set; }
         public string planestudios { get; set; }
+        public string semestre { get; set; }
+        public string creditos { get; set; }
 
     }
 }

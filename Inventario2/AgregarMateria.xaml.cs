@@ -42,7 +42,8 @@ namespace Inventario2
                     horario = hor.Text,
                     planestudios = plan.Text,
                     profesor = pickerLugar.SelectedItem.ToString(),
-                    semestre = sem.Text
+                    semestre = sem.Text,
+                    creditos = cred.Text
                     
                     
                 };

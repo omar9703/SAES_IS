@@ -34,18 +34,27 @@
         <StackLayout 
 			Orientation="Horizontal">
             <Label
-				Text="Fecha de contratacion:"
+				Text="correo:"
 				FontAttributes="Bold"/>
             <Label
-				x:Name="fechaCont"/>
+				x:Name="correo"/>
         </StackLayout>
         <StackLayout 
 			Orientation="Horizontal">
             <Label
-				Text="Ultimo movimiento:"
+				Text="Telefono:"
 				FontAttributes="Bold"/>
             <Label
-				x:Name="ultiMov"/>
+				x:Name="telefono"/>
+            <!-- Indicara el ultimo movimiento que hizo, ingreso o retiro un producto -->
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Direccion:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="dir"/>
             <!-- Indicara el ultimo movimiento que hizo, ingreso o retiro un producto -->
         </StackLayout>
     </StackLayout>

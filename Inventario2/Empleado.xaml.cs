@@ -14,6 +14,7 @@ namespace Inventario2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Empleado : ContentPage
     {
+        List<Usuario> mt = new List<Usuario>();
         public Empleado()
         {
             InitializeComponent();
@@ -23,10 +24,10 @@ namespace Inventario2
             base.OnAppearing();
             try
             {
-                var list = await App.client.GetTable<Usuario>().Where(u => (u.rol == "Administrativo" || u.rol == "Profesor")).ToListAsync();
+                mt = await App.client.GetTable<Usuario>().Where(u => (u.rol == "Administrativo" || u.rol == "Profesor")).ToListAsync();
                 
                 
-                postListView.ItemsSource = list;
+                postListView.ItemsSource = mt;
             }
             catch (MobileServiceInvalidOperationException e)
             {
@@ -41,7 +42,7 @@ namespace Inventario2
 
         private async void MenuOpEmp(object sender, EventArgs e)
         { //Despegar menu de  3 opciones Agregar, Eliminar, Detalles
-            string res = await DisplayActionSheet("Opciones", "Cancelar", null, "Agregar Profesor","Agregar Administrativo" ,"Eliminar Empleado");
+            string res = await DisplayActionSheet("Opciones", "Cancelar", null, "Agregar Profesor","Agregar Administrativo" );
             switch (res)
             {
                 case "Agregar Administrativo":
@@ -52,13 +53,52 @@ namespace Inventario2
                     //Abrir vista/pagina Agregar Empleado
                     await Navigation.PushAsync(new AgregarProfesor());
                     break;
-                case "Eliminar Empleado":
-                    //Abrir vista/pagina Eliminar Empleado
-                    await Navigation.PushAsync(new EliminarEmpleado());
-                    break;
+                
                 
             }
 
+        }
+
+        private async void botones_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var product = button.BindingContext as Usuario;
+            int x = 0;
+            await App.client.GetTable<Usuario>().DeleteAsync(product);
+            mt.Remove(product);
+            await DisplayAlert("Borrar", "Usuario Borrado Exitosamente", "Aceptar");
+            postListView.ItemsSource = null;
+            postListView.ItemsSource = mt;
+        }
+
+        private async void busqueda_SearchButtonPressed(object sender, EventArgs e)
+        {
+            int y = 0;
+            var t = int.TryParse(busqueda.Text, out y);
+            if (t)
+            {
+                var cont = await App.client.GetTable<Usuario>().Where(u => u.boleta == busqueda.Text).ToListAsync();
+                if (cont.Count == 0)
+                    await DisplayAlert("Error", "Usuario no encontrado", "Acpetar");
+                else
+                    postListView.ItemsSource = cont;
+            }
+            else
+            {
+                var cont = await App.client.GetTable<Usuario>().Where(u => u.nombre == busqueda.Text).ToListAsync();
+                if (cont.Count == 0)
+                    await DisplayAlert("Error", "Usuario no encontrado", "Acpetar");
+                else
+                    postListView.ItemsSource = cont;
+            }
+        }
+
+        private void postListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            postListView.SelectedItem = null;
+            var selectedPost = postListView.SelectedItem as Usuario;
+            if (selectedPost != null)
+                Navigation.PushAsync(new DetallesEmpleado(selectedPost));
         }
     }
 }

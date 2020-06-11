@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventario2.modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,14 @@ namespace Inventario2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetallesEmpleado : ContentPage
     {
-        public DetallesEmpleado()
+        public DetallesEmpleado(Usuario u)
         {
             InitializeComponent();
+            nameEmp.Text = u.nombre;
+            idEmpAsig.Text = u.boleta;
+            correo.Text = u.correo;
+            telefono.Text = u.telefono;
+            dir.Text = u.direccion;
         }
     }
 }

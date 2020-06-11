@@ -40,10 +40,34 @@
         <StackLayout 
 			Orientation="Horizontal">
             <Label
-				Text="ID del Empleado:"
+				Text="Boleta:"
 				FontAttributes="Bold"/>
             <Label
 				x:Name="idPersonal"/>
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Telefono:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="tel"/>
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Correo:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="correo"/>
+        </StackLayout>
+        <StackLayout 
+			Orientation="Horizontal">
+            <Label
+				Text="Direccion:"
+				FontAttributes="Bold"/>
+            <Label
+				x:Name="dir"/>
         </StackLayout>
 
     </StackLayout>

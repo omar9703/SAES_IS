@@ -17,25 +17,28 @@
         </StackLayout>
 
         <SearchBar
-			Placeholder="Buscar por nombre o ID"
+            x:Name="busqueda"
+			Placeholder="Buscar por nombre o Boleta"
 			CancelButtonColor="Red"
+            SearchButtonPressed="SearchBar_SearchButtonPressed"
 			 />
 
-        
 
-        <ScrollView
+        <ScrollView Orientation="Horizontal">
+            <ScrollView
 			VerticalOptions="FillAndExpand"
 			HorizontalOptions="FillAndExpand">
             <StackLayout>
-                <ListView x:Name="postListView" BackgroundColor="Gray" >
+                    <ListView x:Name="postListView" BackgroundColor="Gray" ItemSelected="postListView_ItemSelected" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="210"/>
-                                            <ColumnDefinition Width="210"/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition Width="140"/>
                                            
                                             
                                         </Grid.ColumnDefinitions>
@@ -47,7 +50,7 @@
                                                             Text="{Binding boleta}" 
                                                             TextColor="White"  
                                                             Grid.Column="1"/>
-                                        
+                                        <Button x:Name="botones" Text="ELIMINAR" BackgroundColor="Transparent" TextColor="Red" Clicked="botones_Clicked"  Grid.Column="2" />
                                        
                                     </Grid>
                                 </StackLayout>
@@ -57,7 +60,7 @@
                 </ListView>
             </StackLayout>
         </ScrollView>
-
+        </ScrollView>
         <Button
 			Text="Opciones"
 			Clicked="MenuOp"

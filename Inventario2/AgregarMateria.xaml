@@ -48,10 +48,16 @@
                 <Entry Placeholder="Plan:"
                        x:Name="plan"/>
                 <Label
-               Text="Semestre:" 
+               Text="Nivel:" 
 			    FontAttributes="Bold"/>
-                <Entry Placeholder="Semestre:"
+                <Entry Placeholder="Nivel:"
                        x:Name="sem"/>
+                <Label
+               Text="Creditos:" 
+			    FontAttributes="Bold"/>
+                <Entry Placeholder="Creditos:"
+                       x:Name="cred"
+                       Keyboard="Numeric"/>
                 
 
 

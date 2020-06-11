@@ -52,7 +52,7 @@
 
         <Button
 			Margin="50,0,0,0"
-			Text="Materias"
+			Text="Materias Actuales"
 			Clicked="Ir_Historial"
 			FontAttributes="Bold"
 			BorderWidth="1"
@@ -62,7 +62,7 @@
 
         <Button
 			Margin="0,0,50,0"
-			Text="Empleados y Profesores"
+			Text="Historial de Materias"
 			Clicked="Ir_Empleados"
 			FontAttributes="Bold"
 			BorderWidth="1"

@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Inventario2.HistorialCompleto">
     <StackLayout
-		Margin="50,20,50,20">
+		Margin="20,20,20,20">
         <StackLayout
 			Margin="0,0,0,50">
             <Label
@@ -17,12 +17,14 @@
         </StackLayout>
 
         <SearchBar
-			Placeholder="Buscar por nombre o ID"
+            x:Name="busqueda"
+			Placeholder="Buscar por nombre o nivel"
 			CancelButtonColor="Red"
+            SearchButtonPressed="SearchBar_SearchButtonPressed"
 			 />
 
 
-
+        <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand">
         <ScrollView
 			VerticalOptions="FillAndExpand"
 			HorizontalOptions="FillAndExpand">
@@ -30,23 +32,31 @@
                 <ListView x:Name="postListView" BackgroundColor="Gray" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell x:Name="view">
                                 <StackLayout Orientation="Horizontal">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="210"/>
-                                            <ColumnDefinition Width="210"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="120"/>
 
 
-                                        </Grid.ColumnDefinitions>
+                                            </Grid.ColumnDefinitions>
                                         <Label 
                                                             Text="{Binding nombre}" 
                                                             TextColor="White" 
                                                             Grid.Column="0"/>
                                         <Label 
-                                                            Text="{Binding boleta}" 
+                                                            Text="{Binding profesor}" 
                                                             TextColor="White"  
                                                             Grid.Column="1"/>
+                                            <Label 
+                                                            Text="{Binding grupo}" 
+                                                            TextColor="White"  
+                                                            Grid.Column="2"/>
+                                        
+                                            <Button x:Name="botones" Text="ELIMINAR" BackgroundColor="Transparent" TextColor="Red" Clicked="Button_Clicked_1"  Grid.Column="3" />
 
 
                                     </Grid>
@@ -56,6 +66,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
+        </ScrollView>
         </ScrollView>
 
         <Button

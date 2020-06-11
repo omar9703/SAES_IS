@@ -4,14 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Inventario2.HistorialMaterias">
+             x:Class="Inventario2.HistorialMateriasP">
     <StackLayout
 		Margin="50,20,50,20">
         <StackLayout
 			Margin="0,0,0,50">
             <Label
 				HorizontalOptions="Center"
-				Text="MATERIAS" 
+				Text="HSITORIAL" 
 				FontAttributes="Bold"
 				FontSize="Large"/>
         </StackLayout>
@@ -44,9 +44,11 @@
                                                             TextColor="White" 
                                                             Grid.Column="0"/>
                                         <Label 
-                                                            Text="{Binding semestre}" 
+                                                            Text="{Binding grupo}" 
                                                             TextColor="White"  
                                                             Grid.Column="1"/>
+
+
                                     </Grid>
                                 </StackLayout>
                             </ViewCell>
@@ -56,14 +58,7 @@
             </StackLayout>
         </ScrollView>
 
-        <Button
-			Text="Opciones"
-			Clicked="Button_Clicked"
-			HorizontalOptions="Start"
-			FontAttributes="Bold"
-			BorderWidth="1"
-			BackgroundColor="White"
-			BorderColor="Red"/>
+        
     </StackLayout>
 
 </ContentPage>

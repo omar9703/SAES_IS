@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventario2.modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,18 @@ namespace Inventario2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Menu : ContentPage
     {
-        public Menu()
+        public Usuario o;
+        public Menu(Usuario y)
         {
+            o = y;
             InitializeComponent();
+            
+
         }
 
         private void Ir_Perfil(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MiPerfil());
+            Navigation.PushAsync(new MiPerfil(o));
         }
 
         private void Ir_Inventario(object sender, EventArgs e)
